@@ -7,3 +7,40 @@
         text-align: center;
     }
 }
+
+@media (max-width: 768px) {
+    .left-section {
+        text-align: center;
+    }
+
+    .main-image {
+        max-width: 300px;
+    }
+
+    .right-section {
+        margin-top: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .main-image {
+        max-width: 250px;
+    }
+
+    .para {
+        font-size: 16px;
+    }
+
+    .register_button {
+        font-size: 14px;
+    }
+
+    .right-section {
+        padding: 15px;
+    }
+}

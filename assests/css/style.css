@@ -4,24 +4,27 @@
     box-sizing: border-box;
 }
 
+/* Reusable code */
+.orange {
+    text-decoration: none;
+    color: var(--orange);
+}
+
 :root {
     --orange: #ff6600;
     --dark: #333;
     --black: #202224;
-    --Poppins: "Poppins", serif;
+    --Poppins: "Poppins", sans-serif;
 }
 
 body {
+    font-family: var(--Poppins);
     background-color: #f8f9fa;
 }
 
-#container {
-    height: 100vh;
-}
-
 .logo {
-    font-size: 24px;
-    color: var(--orange);
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .logo span {
@@ -35,24 +38,54 @@ body {
 }
 
 .para {
-    font-size: 18px;
+    font-size: 24px;
     color: var(--dark);
     margin-top: 20px;
-    font-family: var(--Poppins);
-}
-
-.para span {
-    color: var(--orange);
 }
 
 .right-section {
-    flex: 1;
     background-color: #fff;
-    padding: 40px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.right-section h2 {
-    color: var(--black);
+.input input,
+#society {
+    padding: 9px 13px 9px 13px;
+    border-radius: 10px;
+    border: 1px solid #D3D3D3;
+}
+
+
+.input input::placeholder {
+    color: #A7A7A7;
+}
+
+.input label {
+    font-weight: 500;
+}
+
+.orange:hover {
+    color: var(--orange);
+}
+
+.register_button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding: 12px 14px 12px 14px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* modal css */
+.modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    color: #202224;
 }

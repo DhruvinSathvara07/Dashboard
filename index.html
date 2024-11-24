@@ -8,6 +8,7 @@
 
     <!-- CSS FILE -->
     <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="assests/css/media_Querry.css">
 
     <!-- BOOTSTRAP CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,34 +25,133 @@
 <body>
     <!-- HEADER SECTION START -->
     <header>
-        <section class="bg-light">
-            <div class="container-fluid">
-                <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center py-5">
+        <section class="bg-light py-5">
+            <div class="container">
+                <div class="row align-items-center">
                     <!-- Left Section -->
-                    <div class="text-center text-md-start mb-4 mb-md-0 left-section">
-                        <div class="logo fw-bold fs-1 mb-3">
-                            Dash <span>Stack</span>
-                        </div>
-                        <img src="assests/images/hero image.jpg" alt="main image" class="main-image rounded" />
-                        <p class="para mt-4">
-                            Connect, Collaborate, and Control <br>
-                            <span>Society Management Simplified</span>
+                    <div class="col-12 col-md-6 text-center text-md-start left-section mb-4 mb-md-0">
+                        <div class="logo fs-1 text-center orange">Dash <span>Stack</span></div>
+                        <img src="assests/images/hero image.jpg" alt="Main Image" class="main-image rounded mt-4">
+                        <p class="para mt-4 fw-bold text-center">
+                            Connect, Collaborate, and Control-
+                            <span class="orange">Society Management Simplified</span>
                         </p>
                     </div>
+
                     <!-- Right Section -->
-                    <div class="right-section col-12 col-md-5 p-4 ms-5">
-                        <h2 class="text-center">Registration</h2>
-                        <!-- Form Placeholder -->
+                    <div class="col-12 col-md-6 right-section">
+                        <h2 class="text-center mb-4">Registration</h2>
                         <form>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            <div class="row mb-3">
+                                <div class="col-12 col-sm-6 mb-3 input">
+                                    <label for="fname" class="form-label">First Name <span
+                                            class="orange">*</span></label>
+                                    <input type="text" required id="fname" class="form-control"
+                                        placeholder="Enter First Name">
+                                </div>
+                                <div class="col-12 col-sm-6 input">
+                                    <label for="lname" class="form-label">Last Name <span
+                                            class="orange">*</span></label>
+                                    <input type="text" required id="lname" class="form-control"
+                                        placeholder="Enter Last Name">
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            <div class="row mb-3">
+                                <div class="col-12 col-sm-6 mb-3 input">
+                                    <label for="email" class="form-label">Email Address <span
+                                            class="orange">*</span></label>
+                                    <input type="email" required id="email" class="form-control"
+                                        placeholder="Enter Email">
+                                </div>
+                                <div class="col-12 col-sm-6 input">
+                                    <label for="phone" class="form-label">Phone Number <span
+                                            class="orange">*</span></label>
+                                    <input type="text" required id="phone" class="form-control" placeholder="+91">
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                            <div class="row mb-3">
+                                <div class="col-12 col-sm-4 mb-3 input">
+                                    <label for="country" class="form-label">Country <span
+                                            class="orange">*</span></label>
+                                    <input type="text" required id="country" class="form-control"
+                                        placeholder="Enter Country">
+                                </div>
+                                <div class="col-12 col-sm-4 mb-3 input">
+                                    <label for="state" class="form-label">State <span class="orange">*</span></label>
+                                    <input type="text" required id="state" class="form-control"
+                                        placeholder="Enter State">
+                                </div>
+                                <div class="col-12 col-sm-4 input">
+                                    <label for="city" class="form-label">City <span class="orange">*</span></label>
+                                    <input type="text" required id="city" class="form-control" placeholder="Enter City">
+                                </div>
+                            </div>
+                            <div class="mb-3 input">
+                                <label for="society" class="form-label">Select Society <span
+                                        class="orange">*</span></label>
+                                <select id="society" class="form-control" required>
+                                    <option value="" disabled selected>Select Society</option>
+                                    <option value="new">Create New Society</option>
+                                    <option value="Vrundavan park society">Vrundavan park society</option>
+                                    <option value="Radhe Kishan park">Radhe Kishan park</option>
+                                    <option value="Karmyog park society">Karmyog park society</option>
+                                    <option value="Umiya Society">Umiya Society</option>
+                                </select>
+                            </div>
+
+                            <!-- Modal for Creating New Society -->
+                            <div class="modal fade" id="createSocietyModal" tabindex="-1"
+                                aria-labelledby="createSocietyModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content" style="border: 1px #f4f4f4;">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="createSocietyModalLabel">Create New Society</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="newSocietyForm">
+                                                <div class="mb-3 input">
+                                                    <label for="newSocietyName" class="form-label">Society Names <span
+                                                            class="orange">*</span></label>
+                                                    <input type="text" class="form-control" id="newSocietyName"
+                                                        placeholder="Enter Society Name" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newSocietyDetails" class="form-label">Details
+                                                        (Optional)</label>
+                                                    <textarea class="form-control" id="newSocietyDetails"
+                                                        placeholder="Enter details about the society"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Add Society</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3 input">
+                                <label for="password" class="form-label">Password <span class="orange">*</span></label>
+                                <input type="password" required id="password" class="form-control"
+                                    placeholder="Enter Password">
+                            </div>
+                            <div class="mb-3 input">
+                                <label for="confirm-password" class="form-label">Confirm Password <span
+                                        class="orange">*</span></label>
+                                <input type="password" required id="confirm-password" class="form-control"
+                                    placeholder="Confirm Password">
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="checkbox" required class="form-check-input" id="terms">
+                                <label for="terms" class="form-check-label">
+                                    I agree to all Terms and <a href="#" class="orange">Privacy Policies</a>.
+                                </label>
+                            </div>
+                            <button type="submit" class="register_button">Register</button>
+                            <div class="text-center mt-3">
+                                <span>Already have an account? <a href="#" class="orange">Login</a></span>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -64,6 +164,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+    <!-- JS FILE -->
+    <script src="assests/js/script.js"></script>
 </body>
 
 </html>
