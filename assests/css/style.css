@@ -10,6 +10,10 @@
     color: var(--orange);
 }
 
+a {
+    text-decoration: none !important;
+}
+
 :root {
     --orange: #ff6600;
     --dark: #333;
@@ -20,6 +24,10 @@
 body {
     font-family: var(--Poppins);
     background-color: #f8f9fa;
+}
+
+.section {
+    height: 100vh;
 }
 
 .logo {
@@ -77,9 +85,12 @@ body {
     padding: 12px 14px 12px 14px;
     border-radius: 10px;
     background: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
-    color: white;
     font-size: 18px;
     font-weight: 600;
+
+    & a {
+        color: white;
+    }
 }
 
 /* modal css */
@@ -88,4 +99,104 @@ body {
     font-weight: 600;
     text-align: left;
     color: #202224;
+}
+
+.buttons button {
+    border: 1px solid #D3D3D3;
+    border-radius: 10px;
+    color: #202224;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #fff;
+    padding: 10px 55px 10px 55px;
+}
+
+.buttons button:nth-child(2) {
+    background: #F6F8FB;
+}
+
+/* login page css */
+.signin {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background: #F6F8FB;
+    padding: 12px 14px 12px 14px;
+    background: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+
+    & a {
+        color: #fff !important;
+    }
+}
+
+/* otp css */
+.otp-container {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.otp-container h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.otp-container p {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.otp-input {
+    width: 100%;
+    max-width: 100px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    margin: 0 5px;
+    padding: 12px 14px;
+    box-sizing: border-box;
+}
+
+.otp-container div {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    /* Adjust spacing between inputs */
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #6c757d;
+}
+
+.timer i {
+    margin-right: 5px;
+}
+
+.resend-otp {
+    color: #6c757d;
+    margin-left: 20px;
+}
+
+.verify-btn {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: not-allowed;
+}
+
+/* Forget Password css */
+.password_para {
+    color: #4f4f4f;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 500;
 }

@@ -28,3 +28,34 @@ document.getElementById('newSocietyForm').addEventListener('submit', function (e
         this.reset();
     }
 });
+
+document.getElementById('society').addEventListener('change', function () {
+    if (this.value === 'new') {
+        // Show modal if "Create New Society" is selected
+        new bootstrap.Modal(document.getElementById('createSocietyModal')).show();
+    }
+});
+
+document.getElementById('newSocietyForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const newSocietyName = document.getElementById('newSocietyName').value;
+
+    if (newSocietyName) {
+        // Add new society to the dropdown
+        const societyDropdown = document.getElementById('society');
+        const newOption = document.createElement('option');
+        newOption.value = newSocietyName;
+        newOption.textContent = newSocietyName;
+        societyDropdown.appendChild(newOption);
+
+        // Select the newly added option
+        societyDropdown.value = newSocietyName;
+
+        // Hide the modal
+        bootstrap.Modal.getInstance(document.getElementById('createSocietyModal')).hide();
+
+        // Clear the form
+        this.reset();
+    }
+});
+
