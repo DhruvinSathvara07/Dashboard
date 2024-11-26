@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input with Icon at Start</title>
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .input-with-icon {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            width: 300px;
+        }
+
+        .input-with-icon .icon {
+            position: absolute;
+            left: 10px;
+            font-size: 16px;
+            color: #999;
+        }
+
+        .input-with-icon input {
+            width: 100%;
+            padding-left: 35px;
+            /* Space for the icon */
+            padding-right: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .input-with-icon input::placeholder {
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-with-icon">
+        <i class="fas fa-user icon"></i> <!-- Icon at the start -->
+        <input type="text" placeholder="Your Name" />
+    </div>
+</body>
+
+</html>
