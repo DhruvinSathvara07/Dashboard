@@ -27,6 +27,8 @@ body {
     background-color: var(--lightgray);
 }
 
+/* Navbar Start */
+
 .navbar {
     background-color: var(--white);
 }
@@ -83,11 +85,52 @@ body {
     transform: translateY(-50%) translateX(-10px);
 }
 
+.fas {
+    font-size: 31px;
+    color: gray;
+}
+
+#main_container {
+    height: 80px !important;
+}
+
+.header-container {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    padding: 10px 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--black);
+}
+
+.navbar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .notification-bell {
     font-size: 17px;
     border: 1px solid var(--offdark);
-    border-radius: 10px !important;
-    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
 }
 
 .admin-image {
@@ -96,17 +139,20 @@ body {
     background-image: url(../images/admin-image.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     border-radius: 50%;
 }
 
 .name {
-    color: var(--black);
     font-size: 16px;
+    color: var(--black);
+    font-weight: bold;
 }
 
 .admin {
-    color: var(--gray);
     font-size: 12px;
+    color: var(--gray);
     font-weight: 500;
 }
+
+/* Navbar END */
